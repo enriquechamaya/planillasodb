@@ -1,0 +1,3 @@
+create database planillasodb;
+
+/* table */
