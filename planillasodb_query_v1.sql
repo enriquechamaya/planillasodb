@@ -10,16 +10,28 @@ codPersona char(8) not null,
 apellidoPat varchar(50) not null,
 apellidoMat varchar(50) not null,
 nombre varchar(50) not null,
+idPais int not null,
 dni char(8) not null,
 estadoCivil char(1) not null,
 sexo char(1) not null,
 fechaNacimiento datetime not null,
-lugarNacimiento char(8) not null,
-lugarResidencia char(8) not null,
+lugarNacimiento int not null,
+lugarResidencia int not null,
 direccion varchar(100) not null,
 telefono varchar(9) not null,
 correo varchar(100) not null,
+fechaCreacion datetime not null,
+fechaUltActualizacion datetime null,
 activo bit not null
+)
+
+
+
+-- tabla trabajador (datos estándar de una trabajador de la empresa SO)
+create table trabajador
+(
+idPersona int identity(1,1) not null,
+codPersona char(8) not null,
 )
 
 -- tabla pais (contiene todos los nombres de los paises y nacionalidad)
@@ -35,6 +47,7 @@ activo bit not null
 -- tabla ubigeo (Dpto, Prov, Dist)
 create table ubigeo
 (
+idUbigeo int identity(1,1) not null,
 codUbigeo char(8) not null,
 codDepartamento char(2) not null,
 nombreDepartamento varchar(50) not null,
@@ -46,3 +59,8 @@ latitud varchar(50) not null,
 longitud varchar(50) not null,
 activo bit not null
 )
+
+
+drop table persona
+drop table ubigeo
+drop table pais
