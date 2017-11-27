@@ -60,7 +60,31 @@ longitud varchar(50) not null,
 activo bit not null
 )
 
+-- tabla usuario
+create table usuario
+(
+idPersona int identity(1,1) not null,
+codPersona char(8) not null,
+idTipoUsuario int not null,
+usuario char(8) not null,
+contrasena char(8) not null,
+fechaCreacion datetime not null,
+fechaUltActualizacion datetime null,
+activo bit not null
+)
 
+-- tabla nivel de usuario (adm, otros)
+create table tipo_usuario
+(
+idTipoUsuario int identity(1,1) not null,
+nombre varchar(50) not null,
+activo bit not null
+)
+
+/*
 drop table persona
 drop table ubigeo
 drop table pais
+drop table tipo_usuario
+drop table usuario
+*/
